@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Combine Files</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+        
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Combine Files</h1>
+    <form action="{% url 'combine_files' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="files" multiple>
+        <input type="submit" value="Combine and Download">
+    </form>
+    <p style="text-align: center; margin-top: 20px;">Author: Sutiwatt Chansinlapakorn</p>
+</body>
+</html>
